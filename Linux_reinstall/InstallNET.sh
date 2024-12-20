@@ -331,6 +331,11 @@ while [[ $# -ge 1 ]]; do
 		tmpWORD="$1"
 		shift
 		;;
+  	-pwin | -passwindows)
+   		shift
+     		pwin="$1"
+       		shift
+	 	;;
 	-hostname)
 		shift
 		tmpHostName="$1"
@@ -4266,6 +4271,8 @@ echo "cloudInitUrl  "${cloudInitUrl} >> \$sysroot/root/alpine.config
 # To determine the url of Windows cmd init file.
 echo "windowsStaticConfigCmd  "${windowsStaticConfigCmd} >> \$sysroot/root/alpine.config
 
+# password Windows
+echo "PWD  "${pwin} >> \$sysroot/root/alpine.config
 # Download initial program.
 wget --no-check-certificate -O \$sysroot/etc/local.d/${AlpineInitFileName} ${AlpineInitFile}
 
