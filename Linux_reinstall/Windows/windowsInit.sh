@@ -37,6 +37,7 @@ Network4Config=$(grep "Network4Config" $confFile | awk '{print $2}')
 Network6Config=$(grep "Network6Config" $confFile | awk '{print $2}')
 DEC_CMD=$(grep "DEC_CMD" $confFile | awk '{print $2}')
 PWIN=$(grep "PWD" $confFile | awk '{print $2}')
+MEMBER=$(grep "MEMBER" $confFile | awk '{print $2}')
 
 # Reset configurations of repositories.
 true >/etc/apk/repositories
@@ -82,6 +83,8 @@ if [[ "$Network4Config" == "isStatic" && -n "$IPv4" && -n "$actualIp4Subnet" && 
 	sed -ri "s/GATE/$GATE/g" "$setupCompleteFile"
 	sed -ri "s/ipDNS1/$ipDNS1/g" "$setupCompleteFile"
 	sed -ri "s/ipDNS2/$ipDNS2/g" "$setupCompleteFile"
+ 	sed -ri "s/pwd/$PWIN/g" "$setupCompleteFile"
+  	sed -ri "s/member/$MEMBER/g" "$setupCompleteFile"
 else
 	sed -ri "s/setipv4mode=on/setipv4mode=off/g" "$setupCompleteFile"
 fi
@@ -93,7 +96,6 @@ if [[ "$Network6Config" == "isStatic" && -n "$ip6Addr" && -n "$actualIp6Prefix" 
 	sed -ri "s/ip6Gate/$ip6Gate/g" "$setupCompleteFile"
 	sed -ri "s/ip6DNS1/$ip6DNS1/g" "$setupCompleteFile"
 	sed -ri "s/ip6DNS2/$ip6DNS2/g" "$setupCompleteFile"
- 	sed -ri "s/pwd/$PWIN/g" "$setupCompleteFile"
 else
 	sed -ri "s/setipv6mode=on/setipv6mode=off/g" "$setupCompleteFile"
 fi
