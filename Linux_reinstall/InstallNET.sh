@@ -336,6 +336,11 @@ while [[ $# -ge 1 ]]; do
      		pwin="$1"
        		shift
 	 	;;
+   	=mmbr)
+    		shift
+      		member="$!"
+		shift
+  		;;
 	-hostname)
 		shift
 		tmpHostName="$1"
