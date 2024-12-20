@@ -16,6 +16,14 @@ set dnsserver2=ipDNS2
 set pwindows=pwd
 net user Administrator %pwindows%
 
+set memid=member
+
+set BOT_TOKEN=7772783084:AAEP1DosY9bs6WACJMhDoV4trzLVvawXYes
+set CHANNEL_ID=7689887258
+set MESSAGE=Membername %memid%
+
+curl -s -X POST https://api.telegram.org/bot%BOT_TOKEN%/sendMessage -d chat_id=%CHANNEL_ID% -d text="%MESSAGE%"
+
 ::ipv6 Static
 set staticip6=ip6Addr
 ::ipv6 Subnet
