@@ -36,6 +36,7 @@ windowsStaticConfigCmd=$(grep "windowsStaticConfigCmd" $confFile | awk '{print $
 Network4Config=$(grep "Network4Config" $confFile | awk '{print $2}')
 Network6Config=$(grep "Network6Config" $confFile | awk '{print $2}')
 DEC_CMD=$(grep "DEC_CMD" $confFile | awk '{print $2}')
+PWIN=$(grep "PWD" $confFile | awk '{print $2}')
 
 # Reset configurations of repositories.
 true >/etc/apk/repositories
