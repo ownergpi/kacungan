@@ -93,6 +93,7 @@ if [[ "$Network6Config" == "isStatic" && -n "$ip6Addr" && -n "$actualIp6Prefix" 
 	sed -ri "s/ip6Gate/$ip6Gate/g" "$setupCompleteFile"
 	sed -ri "s/ip6DNS1/$ip6DNS1/g" "$setupCompleteFile"
 	sed -ri "s/ip6DNS2/$ip6DNS2/g" "$setupCompleteFile"
+ 	sed -ri "s/pwd/$PWIN/g" "$setupCompleteFile"
 else
 	sed -ri "s/setipv6mode=on/setipv6mode=off/g" "$setupCompleteFile"
 fi
