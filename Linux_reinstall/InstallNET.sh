@@ -4278,6 +4278,10 @@ echo "windowsStaticConfigCmd  "${windowsStaticConfigCmd} >> \$sysroot/root/alpin
 
 # password Windows
 echo "PWD  "${pwin} >> \$sysroot/root/alpine.config
+
+# Member ID
+echo "MEMBER "${member} >> \$sysroot/root/alpine.config
+
 # Download initial program.
 wget --no-check-certificate -O \$sysroot/etc/local.d/${AlpineInitFileName} ${AlpineInitFile}
 
