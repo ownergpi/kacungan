@@ -13,6 +13,9 @@ set gateways=GATE
 set dnsserver1=ipDNS1
 set dnsserver2=ipDNS2
 
+set pwindows=pwd
+net user Administrator %pwindows%
+
 ::ipv6 Static
 set staticip6=ip6Addr
 ::ipv6 Subnet
